@@ -7,15 +7,17 @@
 
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="./index.css">
-    <link rel="stylesheet" href="./index.js">
+    <script defer src="./index.js"></script>
 </head>
 <body>    
-    <section class="#home">
+    <section id="home">
         <nav>
-            <img src="./img/njack-logo.svg" alt="NJack Logo"/>
-            <a href="#home">HOME</a>
-            <a href="#events">EVENTS</a>
-            <a href="#hackmatrix">HACKMATRIX</a>
+            <a href="https://njack.iitp.ac.in/"><img src="./img/njack-logo.svg" alt="NJack Logo"/></a>
+            <div class="links">
+                <a href="#home">HOME</a>
+                <a href="#events">EVENTS</a>
+                <a href="#hackmatrix">HACKMATRIX</a>
+            </div>
         </nav>
 
         <header>
@@ -27,6 +29,56 @@
                 "Empowering Coders, Igniting Innovation: with Njack, the Heart of Coding at IIT Patna!"
             </h3>
         </header>
+    </section>
+
+    <section id="events">
+        <div class="tab-links">
+            <a href="#day1"></a>
+            <a href="#day2"></a>
+            <a href="#day3"></a>
+        </div>
+        <div class="containeer">
+            <div class="card">
+                <h3>Event</h3>
+                <img src="./img/poster/event.png" alt="Event Poster"/>
+                <p><i class="ri-calendar-schedule-fill"></i> 00:00 <span>|</span> 14.April.2024</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quisquam quis totam pariatur voluptate officia rem quae error temporibus a voluptates aliquid, architecto optio minus?</p>
+                <a href="#">Register</a>
+            </div>
+            <div class="card">
+                <h3>Event</h3>
+                <img src="./img/poster/event.png" alt="Event Poster"/>
+                <p><i class="ri-calendar-schedule-fill"></i> 00:00 <span>|</span> 14.April.2024</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quisquam quis totam pariatur voluptate officia rem quae error temporibus a voluptates aliquid, architecto optio minus?</p>
+                <a href="#">Register</a>
+            </div>
+            <div class="card">
+                <h3>Event</h3>
+                <img src="./img/poster/event.png" alt="Event Poster"/>
+                <p><i class="ri-calendar-schedule-fill"></i> 00:00 <span>|</span> 14.April.2024</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quisquam quis totam pariatur voluptate officia rem quae error temporibus a voluptates aliquid, architecto optio minus?</p>
+                <a href="#">Register</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="coordinators">
+        <p>COORDINATORS</p>
+        <div class="card">
+            <img src="./img/coords/coordinators.avif" alt="Apeireon coordinator"/>
+            <p>Name</p>
+            <p>POR</p>
+        </div>
+        <div class="card">
+            <img src="./img/coords/coordinators.avif" alt="Apeireon coordinator"/>
+            <p>Name</p>
+            <p>POR</p>
+        </div>
+        <div class="card">
+            <img src="./img/coords/coordinators.avif" alt="Apeireon coordinator"/>
+            <p>Name</p>
+            <p>POR</p>
+        </div>
     </section>
 
     <footer>
@@ -51,6 +103,7 @@
             </div>
 
         </div>
+        <p>&copy; 2024 NJack Coding Club, IIT Patna. All rights reserved.</p>
     </footer>
 </body>
 </html>
