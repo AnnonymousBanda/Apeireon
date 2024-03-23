@@ -28,6 +28,10 @@ nav img
 {
     width: 118px;
 }
+nav .links .selected
+{
+    color: #F15E38;
+}
 #home
 {
     background: url(./img/bg.jpg);
