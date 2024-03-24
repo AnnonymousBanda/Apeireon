@@ -11,6 +11,15 @@ html
     font-family:sans-serif;
 }
 
+.sticky
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    background-color: rgba(30, 30, 30, 0.9);
+}
 
 nav
 {
@@ -18,7 +27,7 @@ nav
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    background-color: #1e1e1e9e;
+    background-color: rgba(30, 30, 30, 0.75);
 }
 nav img, .links
 {
@@ -64,10 +73,8 @@ header
 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin: 200px;
-    text-align: center;
+    padding-top: 200px;
 }
 header img
 {
