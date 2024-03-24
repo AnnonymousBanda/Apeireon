@@ -1,4 +1,5 @@
 import eventInfo from './eventInfo.json' assert {type:'json'}; 
+const eventDays=new Array(eventInfo.length).fill(0).map((x,i)=>`day${i+1}`);
 
 ////////////////////////
 //element rendering tool
@@ -13,6 +14,13 @@ const renderElement = (element, parent) => {
 
 	parentElement.appendChild(createElement(element));
 }
+
+///////////////////
+//Adding tab links
+eventDays.forEach(x=>{
+	renderElement(`<a href="#${x}">${x.charAt(0).toUpperCase()+x.slice(1)}</a>`,'#events .tab-links');
+});
+document.querySelector('#events .tab-links [href="#day1"]').classList.add('selected');
 
 //////////////////////////////
 //event tabbed links behaviour
@@ -83,13 +91,6 @@ document.querySelector(".links").addEventListener("click", (event) => {
         document.querySelector(".links").classList.remove("active");
     }
 });
-
-document.addEventListener('scroll', ()=>{
-	if (document.querySelector(".hamburger").classList.contains("active")||document.querySelector(".links").classList.contains("active")) {
-		document.querySelector(".hamburger").classList.remove("active");
-        document.querySelector(".links").classList.remove("active");
-	}
-})
 
 ////////////////////
 //modal for posters

@@ -9,6 +9,7 @@ html
     text-decoration: none;
     box-sizing: border-box;
     font-family:sans-serif;
+    scroll-behavior: smooth;
 }
 
 .modal
@@ -21,6 +22,7 @@ html
     background: rgba(30, 30, 30, 0.8);
     backdrop-filter: blur(4px);
     z-index: 10;
+    cursor: pointer;
 }
 
 .modal img
@@ -31,6 +33,7 @@ html
     transform: translate(-50%, -50%);
     border-radius: 10px;
     width: 30vw;
+    cursor: default;
 }
 
 .hide-scroll
@@ -307,6 +310,14 @@ background: #555;
 }
 
 
+@media screen and (max-width: 2560px)
+{
+    .modal img
+    {
+        height: 100vh;
+        width: auto;
+    }
+}
 @media screen and (max-width: 768px)
 {
     html
@@ -457,6 +468,7 @@ background: #555;
     .modal img
     {
         width: 100vw;
+        height: auto;
     }
 }
 @media screen and (max-width: 376px)
@@ -469,13 +481,5 @@ background: #555;
     .footer .column:nth-child(2)
     {
         gap: 0px;
-    }
-}
-@media screen and (max-width: 2560px)
-{
-    .modal img
-    {
-        height: 100vh;
-        width: auto;
     }
 }
