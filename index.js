@@ -1,5 +1,5 @@
 import eventInfo from './eventInfo.json' assert {type:'json'}; 
-const eventDays=new Array(3).fill(0).map((x,i)=>`day${i+1}`);
+const eventDays=new Array(eventInfo.length).fill(0).map((x,i)=>`day${i+1}`);
 
 ////////////////////////
 //element rendering tool
