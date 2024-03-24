@@ -69,3 +69,25 @@ const scrollObserver=new IntersectionObserver(entries=>{
 	}
 },{ threshold: 0.001 });
 scrollObserver.observe(document.querySelector('#home'));
+
+
+
+
+
+
+
+
+
+
+//Hamburger behaviour
+document.querySelector(".hamburger").addEventListener("click", ()=>{
+	document.querySelector(".hamburger").classList.toggle("active")
+	document.querySelector(".links").classList.toggle("active")
+})
+
+document.querySelector(".links").addEventListener("click", (event) => {
+    if (event.target.textContent === 'HOME' || event.target.textContent === 'EVENTS' || event.target.textContent === 'HACKMATRIX') {
+        document.querySelector(".hamburger").classList.remove("active");
+        document.querySelector(".links").classList.remove("active");
+    }
+});
