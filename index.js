@@ -1,4 +1,5 @@
 import eventInfo from './eventInfo.json' assert {type:'json'}; 
+const eventDays=new Array(3).fill(0).map((x,i)=>`day${i+1}`);
 
 ////////////////////////
 //element rendering tool
@@ -13,6 +14,13 @@ const renderElement = (element, parent) => {
 
 	parentElement.appendChild(createElement(element));
 }
+
+///////////////////
+//Adding tab links
+eventDays.forEach(x=>{
+	renderElement(`<a href="#${x}">${x}</a>`,'#events .tab-links');
+});
+document.querySelector('#events .tab-links [href="#day1"]').classList.add('selected');
 
 //////////////////////////////
 //event tabbed links behaviour
@@ -116,3 +124,4 @@ eventInfo[0].forEach((elementInfo)=>{
 	renderElement(element,'#events .container');
 });
 addModalBehaviour();
+
