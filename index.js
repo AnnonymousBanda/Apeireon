@@ -18,7 +18,7 @@ const renderElement = (element, parent) => {
 ///////////////////
 //Adding tab links
 eventDays.forEach(x=>{
-	renderElement(`<a href="#${x}">${x}</a>`,'#events .tab-links');
+	renderElement(`<a href="#${x}">${x.charAt(0).toUpperCase()+x.slice(1)}</a>`,'#events .tab-links');
 });
 document.querySelector('#events .tab-links [href="#day1"]').classList.add('selected');
 
@@ -124,4 +124,3 @@ eventInfo[0].forEach((elementInfo)=>{
 	renderElement(element,'#events .container');
 });
 addModalBehaviour();
-
