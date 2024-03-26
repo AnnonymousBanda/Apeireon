@@ -95,13 +95,16 @@ document.querySelector(".links").addEventListener("click", (event) => {
 ////////////////////
 //modal for posters
 const addModalBehaviour=()=>{
-	document.querySelectorAll('#events img').forEach(x=>{
+	document.querySelectorAll('#events img, #events .card-content h3').forEach(x=>{
 		x.addEventListener('click',e=>{
-			const src=e.target.getAttribute('src');
-		
-			if(!src)
+			let src;
+			if(e.target.tagName==='IMG')
+				src=e.target.getAttribute('src');
+			else if(e.target.tagName==='H3')
+				src=e.target.getAttribute('data-src');
+			else
 				return;
-		
+	
 			renderElement(`<div class="modal"><img src=${src} alt="Event Poster"/></div>`,'body');
 		
 			document.querySelector('.modal').addEventListener('click',e=>{
@@ -120,7 +123,7 @@ const addModalBehaviour=()=>{
 ///////////////////
 //default elements
 eventInfo[0].forEach((elementInfo)=>{	
-	const element=`<div class="card"><img src=${elementInfo.src} alt="Event Poster"/><div class="card-content"><h2>${elementInfo.title}</h2><p><i class="ri-calendar-schedule-fill"></i> ${elementInfo.time} <span>|</span> ${elementInfo.date}</p><p>${elementInfo.description}</p><a href="#"><h3>Register</h3></a></div></div>`;
+	const element=`<div class="card"><img src=${elementInfo.src} alt="Event Poster"/><div class="card-content"><h2>${elementInfo.title}</h2><p><i class="ri-calendar-schedule-fill"></i> ${elementInfo.time} <span>|</span> ${elementInfo.date}</p><p>${elementInfo.description}</p><h3 data-src=${elementInfo.src}>Learn More</h3></div></div>`;
 	renderElement(element,'#events .container');
 });
 addModalBehaviour();

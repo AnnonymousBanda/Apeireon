@@ -237,7 +237,7 @@ footer
 {
     margin: 0;
 }
-#events .card-content a
+#events .card-content h3
 {
     padding: 10px 20px;
     background-color: purple;
@@ -245,8 +245,9 @@ footer
     color: #f7f7f7;
     font-weight: bolder;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    width: fit-content;
     text-align: center;
 }
 #events .card-content p
@@ -361,7 +362,7 @@ background: #555;
     }
     nav .links.active
     {
-        top: 84px;
+        top: 84.3px;
     }
     .hamburger.active .bar:nth-child(2)
     {
@@ -461,7 +462,7 @@ background: #555;
     {
         margin:10px;
     }
-    #events .card-content a
+    #events .card-content h3
     {
         align-self: center;
     }
