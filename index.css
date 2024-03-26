@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lobster&family=Montserrat:wght@100;400;700&display=swap');
+
 html
 {
     font-size: 62.5%;
@@ -8,7 +10,7 @@ html
     padding: 0;
     text-decoration: none;
     box-sizing: border-box;
-    font-family:sans-serif;
+    font-family: Josefin Sans;
     scroll-behavior: smooth;
 }
 
@@ -23,6 +25,24 @@ html
     backdrop-filter: blur(4px);
     z-index: 10;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+.modal a
+{
+    position: fixed;
+    top: 88vh;
+    left: 55.5vw;
+    padding: 10px 20px;
+    background-color: purple;
+    font-size: 2.5rem;
+    color: #f7f7f7;
+    font-weight: bolder;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    width: fit-content;
+    text-align: center;
 }
 
 .modal img
@@ -94,7 +114,6 @@ nav .links .selected
 {
     color: rgba(192, 190, 190, 0.801);
     font-size: 1.8rem;
-    font-family: sans-serif;
 }
 
 
@@ -113,7 +132,6 @@ header img
 }
 header h2, header h3
 {
-    font-family: sans-serif;
     font-weight: bolder;
     color: #ffffff;
 }
@@ -192,6 +210,10 @@ footer
     padding: 150px 100px;
     
     gap: 100px;
+}
+.tab-links
+{
+    padding: 10px;
 }
 .tab-links a
 {
@@ -315,19 +337,41 @@ background: #555;
 {
     .modal img
     {
-        height: 100vh;
+        height: 70vh;
         width: auto;
+    }
+}
+
+@media screen and (max-width: 1440px)
+{
+    .modal a
+    {
+        top: 88vh;
+        left: 54.2vw;
+    }
+}
+@media screen and (max-width: 1024px)
+{
+    .modal a
+    {
+        top: 88vh;
+        left: 56vw;
+    }
+    header{
+        padding-top: 70px;
     }
 }
 @media screen and (max-width: 768px)
 {
+
     html
     {
         font-size: 58.5%;
     }
-    header
+    .modal a
     {
-        padding-top: 150px;
+        top: 88vh;
+        left: 59vw;
     }
     header h3
     {
@@ -380,7 +424,6 @@ background: #555;
 
     .tab-links
     {
-        padding-top: 50px;
         flex-wrap: wrap;
         justify-content: center;
     }
@@ -471,12 +514,22 @@ background: #555;
         width: 100vw;
         height: auto;
     }
+    .modal a
+    {
+        top: 85vh;
+        left: 36vw;
+    }
 }
 @media screen and (max-width: 376px)
 {
     #events .card
     {
         padding: 40px 20px;
+    }
+    .modal a
+    {
+        top: 80vh;
+        left: 32vw;
     }
 
     .footer .column:nth-child(2)

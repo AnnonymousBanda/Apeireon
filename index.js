@@ -40,7 +40,7 @@ document.querySelector('.tab-links').addEventListener('click', (e) => {
 	document.querySelectorAll('#events .container *').forEach((x) => x.remove());
 	
 	eventInfo[id.charAt(id.length - 1) - 1].forEach((elementInfo)=>{
-		const element=`<div class="card"><img src=${elementInfo.src} alt="Event Poster"/><div class="card-content"><h2>${elementInfo.title}</h2><p><i class="ri-calendar-schedule-fill"></i> ${elementInfo.time} <span>|</span> ${elementInfo.date}</p><p>${elementInfo.description}</p><a href="#"><h3>Register</h3></a></div></div>`;
+		const element=`<div class="card"><img src=${elementInfo.src} alt="Event Poster"  data-gform="${elementInfo.gform}"/><div class="card-content"><h2>${elementInfo.title}</h2><p><i class="ri-calendar-schedule-fill"></i> ${elementInfo.time} <span>|</span> ${elementInfo.date}</p><p>${elementInfo.description}</p><h3 data-src=${elementInfo.src}  data-gform="${elementInfo.gform}">Learn More</h3></div></div>`;
 		renderElement(element,'#events .container');
 	});
 	//add modal behaviour to the posters
@@ -52,9 +52,8 @@ document.querySelector('.tab-links').addEventListener('click', (e) => {
 document.querySelectorAll('nav .links, .footer .links').forEach((x)=>{
 	x.addEventListener('click',(e)=>{
 		const id=e.target.getAttribute('href');
-		if(!id||id==='#hackmatrix')
+		if(!id || !id.startsWith('#'))
 			return;
-
 		e.preventDefault();
 		document.querySelector(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
 	});
@@ -104,26 +103,27 @@ const addModalBehaviour=()=>{
 				src=e.target.getAttribute('data-src');
 			else
 				return;
-	
-			renderElement(`<div class="modal"><img src=${src} alt="Event Poster"/></div>`,'body');
+			const gform=e.target.getAttribute('data-gform');
+
+			renderElement(`<div class="modal"><img src=${src} alt="Event Poster"/><a href=${gform} target="_blank">REGISTER</a></div>`,'body');
 		
 			document.querySelector('.modal').addEventListener('click',e=>{
-				if(e.target.tagName==='IMG')
+				if(e.target.tagName==='IMG'||e.target.tagName==='A')
 					return;
 				e.target.remove();
 				document.querySelector('body').classList.remove('hide-scroll');
-			})
+			});
 			
 			document.querySelector('body').classList.add('hide-scroll');
 		});
-	})
+	});
 }
 
 
 ///////////////////
 //default elements
 eventInfo[0].forEach((elementInfo)=>{	
-	const element=`<div class="card"><img src=${elementInfo.src} alt="Event Poster"/><div class="card-content"><h2>${elementInfo.title}</h2><p><i class="ri-calendar-schedule-fill"></i> ${elementInfo.time} <span>|</span> ${elementInfo.date}</p><p>${elementInfo.description}</p><h3 data-src=${elementInfo.src}>Learn More</h3></div></div>`;
+	const element=`<div class="card"><img src=${elementInfo.src} alt="Event Poster" data-gform=${elementInfo.gform}/><div class="card-content"><h2>${elementInfo.title}</h2><p><i class="ri-calendar-schedule-fill"></i> ${elementInfo.time} <span>|</span> ${elementInfo.date}</p><p>${elementInfo.description}</p><h3 data-src=${elementInfo.src}  data-gform="${elementInfo.gform}">Learn More</h3></div></div>`;
 	renderElement(element,'#events .container');
 });
 addModalBehaviour();
